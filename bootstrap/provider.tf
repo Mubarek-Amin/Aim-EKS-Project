@@ -5,4 +5,9 @@ terraform {
         version = "6.42.0"
     }
   }
+  
+}
+
+provider "aws" {
+    region = "eu-west-2"
 }
