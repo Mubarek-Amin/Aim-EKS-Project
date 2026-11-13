@@ -10,6 +10,11 @@ let db;
 app.use(express.json());
 
 client.connect().then(()=>{
-    db = client.db('afterschool');
+    db = client.db('urlshortener');
     app.listen(PORT,() => console.log(`Server running on Port ${PORT}`));
-});
+})
+.catch((err)=>{
+    console.error('DB connection failed:',err)
+    process.exit(1);
+    })
+;
